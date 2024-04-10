@@ -8,6 +8,7 @@ namespace CoffeeMachine
         public CoffeeMachine(DrinkMaker drinkMaker)
         {
             _drinkMaker = drinkMaker;
+            order = new EmptyOrder();
         }
 
         public void SelectCoffee()
@@ -35,12 +36,13 @@ namespace CoffeeMachine
         {
             var command = order.ComposeCommand();
             _drinkMaker.Execute(command);
-            order.ResetOrder();
+            order = order.ResetOrder();
         }
     }
 
     public enum DrinkType
     {
+        None,
         Coffee = 'C',
         Tea = 'T',
         Chocolate = 'H'

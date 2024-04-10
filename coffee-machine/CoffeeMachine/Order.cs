@@ -12,12 +12,12 @@ internal class Order(DrinkType drinkType)
         }
     }
 
-    internal void ResetOrder()
+    internal Order ResetOrder()
     {
-        ResetSugar();
+        return new EmptyOrder();
     }
 
-    internal string ComposeCommand()
+    internal virtual string ComposeCommand()
     {
         return (char)drinkType + ComposeCommandSugarSection();
     }
@@ -34,5 +34,13 @@ internal class Order(DrinkType drinkType)
     private void ResetSugar()
     {
         numberOfSugars = 0;
+    }
+}
+
+internal class EmptyOrder() : Order(DrinkType.None)
+{
+    internal override string ComposeCommand()
+    {
+        return "M:Please,select a drink";
     }
 }

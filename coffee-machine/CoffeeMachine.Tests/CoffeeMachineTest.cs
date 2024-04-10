@@ -91,23 +91,23 @@ namespace CoffeeMachine.Tests
 
         }
 
-        //[Test]
-        //public void order_drink_without_drink_selected()
-        //{
-        //    coffeeMachine.MakeDrink();
+        [Test]
+        public void order_drink_without_drink_selected()
+        {
+            coffeeMachine.MakeDrink();
 
-        //    drinkMaker.Received(1).Execute("M:Please,select a drink");
-        //}
+            drinkMaker.Received(1).Execute("M:Please,select a drink");
+        }
 
-        //[Test]
-        //public void reset_drink_after_drink_made()
-        //{
-        //    coffeeMachine.SelectCoffee();
-        //    coffeeMachine.MakeDrink();
+        [Test]
+        public void reset_drink_after_drink_made()
+        {
+            coffeeMachine.SelectCoffee();
+            coffeeMachine.MakeDrink();
 
-        //    coffeeMachine.MakeDrink();
+            coffeeMachine.MakeDrink();
 
-        //    drinkMaker.Received(1).Execute("M:Please,select a drink");
-        //}
+            drinkMaker.Received(1).Execute("M:Please,select a drink");
+        }
     }
 }
