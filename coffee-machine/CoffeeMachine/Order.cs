@@ -30,11 +30,6 @@ internal class Order(DrinkType drinkType)
         }
         return ":" + numberOfSugars + ":0";
     }
-
-    private void ResetSugar()
-    {
-        numberOfSugars = 0;
-    }
 }
 
 internal class EmptyOrder() : Order(DrinkType.None)
